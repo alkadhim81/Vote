@@ -32,6 +32,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         student_id: int = ''
         student_id = self.id.text()
 
+
         try:
             if student_id == '':
                 raise ValueError
