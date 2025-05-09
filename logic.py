@@ -29,7 +29,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         """
         Sends the users Student ID number and there vote selection to a csv file
         """
-        student_id: int = ''
+        student_id = ''
         student_id = self.id.text()
 
 
@@ -65,7 +65,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         with open("results.csv", 'r', newline='') as csvfile:
             reader = csv.reader(csvfile)
             for row in reader:
-                if str(student_id) == row[0]:
+                if row and str(student_id) == row[0]:
                     self.label_message.setText("This student has already voted.")
                     self.label_message.setStyleSheet("color: red;")
                     return
